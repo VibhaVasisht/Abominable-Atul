@@ -1,6 +1,6 @@
 # Abominable Atul
 
-A VR horror escape room for Meta Quest Pro, set in a real room at our university.
+A horror escape room game in Unity, set in a real room at our university.
 The player has to find 4 clues to escape while dealing with three ghosts:
 
 - a **dangerous** ghost that kills you if it catches you
@@ -15,7 +15,7 @@ The player has to find 4 clues to escape while dealing with three ghosts:
 4. The first open imports the layout model, which takes a few minutes. Then the editor script builds `Assets/Scenes/Layout.unity` on its own, with:
    - the room (`Assets/Models/Layout/area_v2.fbx`), with colliders on solid surfaces
    - dark horror lighting: dim ambient light, fog and a weak moonlight
-   - a `PlayerSpawn` on the floor with a placeholder camera and a small player light
+   - a `PlayerSpawn` on the floor with a camera at head height and a small player light
    - empty `Clues`, `Ghosts`, `Interactables` and `Audio` groups
 
    You can rebuild it any time from the menu: **Abominable Atul > Build Layout Scene**.
@@ -30,13 +30,6 @@ The FBX doesn't embed its textures. It expects these files in a `textures` folde
 
 Put them in `Assets/Models/Layout/textures/`, then right-click `area_v2.fbx` and choose **Reimport**.
 
-## Setting up VR for Quest Pro
-
-1. **File > Build Profiles**: switch the platform to **Android**.
-2. **Edit > Project Settings > XR Plug-in Management**: install it, then tick **OpenXR** on the Android tab. Add the **Meta Quest Support** feature and the Meta Quest Pro interaction profile.
-3. **Window > Package Manager**: install **XR Interaction Toolkit** and import its **Starter Assets** sample.
-4. In the Layout scene, delete the placeholder camera and drop an **XR Origin (XR Rig)** under `PlayerSpawn`.
-
 ## Performance note
 
-The layout is about 3.5 million vertices, which is heavy for a standalone headset. Most of it is in three objects: `chandelier` (about 2.5M vertices), `silent room lamps` (about 590k) and `bench 3` (about 280k). The walls are only about 38k. Before building for Quest, use a Decimate modifier on those three in Blender and re-export.
+The layout is about 3.5 million vertices. Most of it is in three objects: `chandelier` (about 2.5M vertices), `silent room lamps` (about 590k) and `bench 3` (about 280k). If the editor or the game feels slow, use a Decimate modifier on those three in Blender and re-export.

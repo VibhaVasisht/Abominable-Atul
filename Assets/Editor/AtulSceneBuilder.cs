@@ -86,9 +86,8 @@ public static class AtulSceneBuilder
         var spawnGo = new GameObject("PlayerSpawn");
         spawnGo.transform.position = spawn;
 
-        // Placeholder camera at head height. Replace with an XR Origin once the
-        // XR packages are installed (see README).
-        var camGo = new GameObject("Main Camera (placeholder for XR Origin)");
+        // Player camera at head height.
+        var camGo = new GameObject("Main Camera");
         camGo.tag = "MainCamera";
         var cam = camGo.AddComponent<Camera>();
         cam.clearFlags = CameraClearFlags.SolidColor;
