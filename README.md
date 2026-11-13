@@ -10,8 +10,9 @@ The player has to find 4 clues to escape while dealing with three ghosts:
 ## Opening the project
 
 1. Clone the repo. It uses **Git LFS** for models, textures and audio, so run `git lfs install` once before cloning (GitHub Desktop handles this for you).
-2. In Unity Hub: **Add > Add project from disk** and pick this folder. Open it with **Unity 6.3**. If Hub says the exact version isn't installed, choose your installed 6.3 editor.
-3. The first open imports the layout model, which takes a few minutes. Then the editor script builds `Assets/Scenes/Layout.unity` on its own, with:
+2. Copy the room layout into `Assets/Models/Layout/` and name it `area_v2.fbx`.
+3. In Unity Hub: **Add > Add project from disk** and pick this folder. Open it with **Unity 6.3**. If Hub says the exact version isn't installed, choose your installed 6.3 editor.
+4. The first open imports the layout model, which takes a few minutes. Then the editor script builds `Assets/Scenes/Layout.unity` on its own, with:
    - the room (`Assets/Models/Layout/area_v2.fbx`), with colliders on solid surfaces
    - dark horror lighting: dim ambient light, fog and a weak moonlight
    - a `PlayerSpawn` on the floor with a placeholder camera and a small player light
